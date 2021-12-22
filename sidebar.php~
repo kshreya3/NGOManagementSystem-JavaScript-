@@ -1,0 +1,16 @@
+<div class="widget-main">
+	<div class="widget-main-title">
+		<h4 class="widget-title"> Today's Schedule</h4>
+	</div>
+	<div class="widget-inner">
+		<div class="full-row">
+			<ul id="menu-footer-left" class="menu">
+				<li><a href="#">&nbsp;Blah</a></li>	
+				<li><a href="#">&nbsp;Blah</a></li>	
+				<li><a href="#">&nbsp;Blah</a></li>	
+				<li><a href="#">&nbsp;Blah</a></li>			
+			</ul>
+		</div>
+	</div>
+
+</div>

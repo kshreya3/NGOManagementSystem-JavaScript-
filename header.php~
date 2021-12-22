@@ -1,0 +1,18 @@
+<header>
+	<img class="box" src="header.jpg"></img>
+	<section>
+		<a href="index.php" id="logo">PST</a>
+			<label for="toogle-1" class="toggle-menu"><!--<ul><li>1</li><li>2</li><li>3</li></ul>--></label>
+			<!--<input type="checkbox" id="toggle-1">-->
+			<nav>
+				<ul>
+					<li><a href="index.php"><i class="icon-home"></i>Home</a></li>
+					<li><a href="about.php"><i class="icon-user"></i>About</a></li>
+					<li><a href="portfolio.php"><i class="icon-thumbs-up-alt"></i>Portfolio</a></li>
+					<li><a href="services.php"><i class="icon-gear"></i>Services</a></li>
+					<li><a href="gallery.php"><i class="icon-picture"></i>Gallery</a></li>
+					<li><a href="contact.php"><i class="icon-phone"></i>Contact</a></li>
+				</ul>
+			</nav>
+	</section>
+</header>

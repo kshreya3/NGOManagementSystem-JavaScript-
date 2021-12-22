@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link href="css/header.css" rel="stylesheet">
+		<link href="css/main.css" rel="stylesheet">
+		<link href="css/footer.css" rel="stylesheet">
+		<link href="css/sidebar.css" rel="stylesheet">
+	</head>
+
+<!--BODY-->
+
+<?php require'include/header.php' ?>
+
+<?php
+	session_start();
+	$_SESSION['loggedin']=false;
+	$error="";
+	$f=0;
+	$con=pg_connect("host=192.168.16.1 port=5432 dbname=TYBG6 user=TYBG6") or die("could not connect");
+	$name=$_POST['name'];
+	$password=$_POST['password'];
+	if(isset($_POST['Submituser']))
+	{
+		$entry=pg_query("select a_name,a_password from Admin WHERE a_name='$name' AND a_password='$password';");
+		if(pg_num_rows($entry)>0)
+		{
+			$_SESSION['loggedin']=true;
+			$_SESSION['name']=$name;
+			header("location:indexadmin.php");	
+		}
+		else
+		{
+			$f=1;
+		}
+		if($f!=0)
+		{
+			$error= "Invalid Entry";
+		}
+	}
+?>
+
+<div class="in">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<!--MAIN-->
+				<div id="grid">
+					<div class="page-title clearfix">
+						<form action="<?php $_SELF_PHP ?>" method="POST" autocomplete="off">
+						<fieldset>
+						
+						<legend style="margin-left:450px;">Login</legend><br>
+						<center>
+						&nbspUsername:&nbsp&nbsp<input type="text" name="name"></input><br><br>
+						&nbspPassword:&nbsp&nbsp&nbsp&nbsp<input type="password" name="password"></input><br><br>
+						<div name="error" style="color:red;"><?php echo $error;?></div>						
+						&nbsp<h6><a href="forgotpass.php">FORGOT Password?</a></h6></br>
+						<input type="submit" value="Submit" name="Submituser"></input></center>	<br>
+						</fieldset>						
+						</form>					
+					</div>
+				</div>
+				<!--END OF MAIN-->
+			</div>		
+		</div>
+	</div>
+</div>
+
+<?php require'include/footer.php' ?>
+
+

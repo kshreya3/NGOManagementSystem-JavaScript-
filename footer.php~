@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/CSS" href="css/footer.css">
+	</head>
+	<footer class="site-footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3">
+					<div class="footer-widget">
+						<h4 class="footer-widget-title">
+							Get In Touch
+						</h4>
+						<p>
+							Email:<br>
+							info@ngo.com<br>
+							<br>Phone:<br>
+							+91 7719949447<br>
+						</p>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="footer-widget">
+						<h4 class="footer-widget-title">
+							Departments
+						</h4>
+						<p>
+							Name And Address<br><br>
+							Email Address<br>@<br><br>
+						</p>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="footer-widget">
+						<h4 class="footer-widget-title">
+							Click to Clean
+						</h4>
+						<p>
+							Name And Address<br><br>
+							Email Address<br>@<br><br>
+						</p>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="footer-widget">
+						<h4 class="footer-widget-title">
+							Connect with us
+						</h4>
+						<p>
+							Instagram<br><br>
+							Facebook<br>@<br><br>
+						</p>
+					</div>
+				</div>
+				<div class="bottom-footer">
+					<div class="row">
+						<div>
+							<p class="small-text">
+								copyright Designed by 
+							</p>
+						</div>
+					</div>
+				</div>	
+			</div>
+		</div>
+	</footer>
+</html>

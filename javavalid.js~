@@ -1,0 +1,105 @@
+function checkForm()
+{
+	//Fetching value for input field
+	var name = document.getElementById("username1").value;
+	var email = document.getElementById("email1").value;
+	var phone = document.getElementById("phone1").value;
+	var age = document.getElementById("age1").value;
+	var password = document.getElementById("password1").value;
+	var locality = document.getElementById("locality1").value;
+	var occupation = documnet.getElementById("occupation1").value;
+	
+	var username1 = document.getElementById("username");
+	var email1 = document.getElementById("email");
+	var phone1 = document.getElementById("phone");
+	var age1 = document.getElementById("age");
+	var password1 = document.getElementById("password");
+	var locality1 = document.getElementById("locality");
+	var occupation1 = document.getElementById("occupation");
+	
+	//Check input fields should not be blank
+	if(name == '' && email == '' && phone == '' && age == '' && password == '' && locality == '' && occupation == '')
+	{
+		username1.innerHTML = 'Please enter your name';
+		email1.innerHTML = 'Please enter your email address';
+		phone1.innerHTML = 'Please enter your phone no';
+		age1.innerHTML = 'Please enter your age';
+		password1.innerHTML = 'Please enter password';
+		locality1.innerHTML = 'Please enter your locality';
+		occupation1.innerHTML = 'Please enter your occupation';
+	}
+	else if(name == '')
+	{
+		username1.innerHTML = 'Please enter your name';
+	}
+	else if(phone == '')
+	{
+		phone1.innerHTML = 'Please enter your phone no';
+	}
+	else if(email == '')
+	{
+		email1.innerHTML = 'Please enter your email address';
+	}
+	else if(age == '')
+	{
+		age1.innerHTML = 'Please enter your age';
+	}
+	else if(password == '')
+	{
+		password1.innerHTML = 'Please enter password';
+	}
+	else if(locality == '')
+	{
+		locality1.innerHTML = 'Please enter your locality';
+	}
+	else if(occupation == '')
+	{
+		occupation1.innerHTML = 'Please enter your occupation';
+	}
+	else
+	{
+		//Notifying errors
+		if(username1.innerHTML == 'First Name is requried' || username1.innerHTML == 'Only letters allowed' || email1.innerHTML == 'Email is required' || email1.innerHTML == 'Invalid email format' || phone1.innerHTML == 'Phone number is requried' || phone1.innerHTML == 'Invalid contact number' || age1.innerHTML == 'Age is requried' || age1.innerHTML == 'Invalid age' || password1.innerHTML == 'Password is requried' || locality1.innerHTML == 'Locality is requried' || occupation1.innerHTML =='Occupation is requried')
+		{
+			//blah;
+		}
+		else
+		{
+			document.getElementById("validation").submit();
+		}
+	}
+}
+
+//AJAX
+
+function validate(field,query)
+{
+	var xmlhttp;
+	if(window.XMLHttpRequest)
+	{
+		xmlhttp=new XMLHttpRequest();
+	}
+	else
+	{
+		xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	xmlhttp.open("GET", "loginvalid.php?field=" + field + "&query=" +query, false);
+	xmlhttp.onreadystatechange=function()
+	{
+		if(xmlhttp.readyState != 4)
+		{
+			document.getElementById(field).innerHTML="Validating..";
+		}
+		else if(xmlhttp.readyState == 4)
+		{
+			//alert(xmlhttp.responseText);
+			document.getElementById(field).innerHTML=xmlhttp.responseText;
+		}
+		else
+		{
+			document.getElementById(field).innerHTML="Error occurrered.<a href='index.php'>reload or try again</a>the page.";   
+	        }
+	}
+ 	
+	xmlhttp.send();
+}
